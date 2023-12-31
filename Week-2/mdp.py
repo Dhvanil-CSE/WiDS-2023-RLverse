@@ -42,6 +42,10 @@ while True:
             for poss in range(len(mdp_dict['transitions'][s][act])):
                 Q[s][act]+=float(mdp_dict['transitions'][s][act][poss]['probability']*(mdp_dict['transitions'][s][act][poss]['reward']+mdp_dict['gamma']*V[mdp_dict['transitions'][s][act][poss]['fin_state']]))
                 # vk+=float(mdp_dict['transitions'][s][act][poss]['probability']*(mdp_dict['transitions'][s][act][poss]['reward']+mdp_dict['gamma']*Prev_v[mdp_dict['transitions'][s][act][poss]['fin_state']]))
+            # if vk> V[s]:
+            #     V[s]=vk
+            #     A[s]=act
+
     if np.max(np.abs(V-np.max(Q,axis=1)))<=theta:
         V=np.max(Q,axis=1)
         A=np.argmax(Q,axis=1)
