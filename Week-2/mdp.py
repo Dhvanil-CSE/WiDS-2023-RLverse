@@ -2,7 +2,7 @@ import numpy as np
 import math
 fname="mdp-10-5.txt"
 mdp_dict={'transitions':{},'gamma': None}
-with open("mdp-10-5.txt","r") as file:
+with open(fname,"r") as file:
     for line in file:
         tokens=line.split()
         if tokens[0]=='states':
